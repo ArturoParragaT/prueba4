@@ -676,7 +676,7 @@
     .nav > li {
         a {
           color: @wm-header-text-color;
-          margin: .62em 0;
+          margin: 1em 0;
           i {
             font-size: 1.3em;
             line-height: normal;
@@ -686,9 +686,14 @@
             background-color: transparent;
           }
         }
-        .profile, &:last-child a, .app-popover-wrapper a  {
+        .app-popover-wrapper a  {
           padding: 0 2em 0 1.5em;
           margin: .9em 0;
+          border-radius: 0;
+        }
+        .profile, &:last-child a{
+          // padding: 0 2em 0 1.5em;
+          // margin: .9em 0;
           border-radius: 0;
           img {
               border-radius: 50%;
@@ -696,12 +701,12 @@
           }
           &::before {
             content: '';
-            height: 70%;
+            height: 40%;
             width: 1px;
             background-color: @wm-header-text-color;
             position: absolute;
             left: 0;
-            margin: .5em 0;
+            margin: 0.2em 0;
           }
         }
     }
@@ -724,6 +729,9 @@
             height: 70px;
             padding: 10px 15px;
           }
+        }
+        .app-grid-column[name="headerright"] {
+          padding-top:0 !important;
         }
       }
     }
@@ -2341,6 +2349,7 @@
   @wm-wizard-active-color: @brand-success;
   @wm-wizard-current-color: @brand-secondary;
 
+
   .app-wizard {
      background-color: transparent;
      box-shadow: @shadow-none;
@@ -2447,9 +2456,44 @@
                 font-size: 1.6em;
             }
         }
+        &.iconstepper{
+          .app-wizard-step.active {
+            .wizard-number-step {
+              background-color: @brand-success;
+              .app-icon {
+                color: #fff;
+              }
+            }
+          }
+          .app-wizard-steps { 
+            .app-wizard-step.current {
+              .wizard-step-number {
+                background-color: @brand-secondary; 
+                .app-icon {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+     }
+     &.number {
+       .app-wizard-steps {
+         .app-wizard-step {
+           a {
+             .wizard-step-number {
+               width: 25pt;
+               height: 25pt;
+               left: 53%;
+               top: -25px;
+               font-size: 1.1em;
+             }
+           }
+         }
+       }
      }
 
-     &.number, &.dottedstepper {
+     &.number, &.dottedstepper, &.iconstepper {
         .app-wizard-steps {
            box-shadow: @shadow-none;
            border-radius: 0;
@@ -2471,6 +2515,15 @@
                  }
               }
               &.current {
+                 .wizard-step-number{
+                     border-color: @wm-wizard-current-color;
+                     .app-icon {
+                         color: @wm-wizard-current-color;
+                     }
+                     .dottedstepper{
+                         background-color: @wm-wizard-current-color;
+                     }
+                 }
                  a {
                     color: @wm-wizard-current-color;
                     background-color: transparent;
@@ -2487,6 +2540,12 @@
                         color: @wm-wizard-active-color;
                     }
                  }
+                 .wizard-step-number {
+                     border-color: @brand-success;
+                     .app-icon{
+                         color: @brand-success;
+                     }
+                 }
               }
               &.disabled a {
                   background-color: transparent;
@@ -2497,12 +2556,33 @@
         &.vertical {
             .app-wizard-steps {
                 .app-wizard-step {
+                    .wizard-step-number {
+                        left: -25px;
+                        top: 8px;
+                    }
                     a {
                         padding: 0 10px 0 @padding-large-horizontal;
                     }
                 }
             }
+            &.text-inline {
+              .app-wizard-steps {
+                  .app-wizard-step {
+                      .wizard-step-number {
+                          left: -22px;
+                          top: 22px;
+                      }
+                  }
+              }
+            }
         }
+     }
+     &.dottedstepper {
+         &.text-inline {
+             .title-wrapper {
+                 left: 15px;
+             }
+         }
      }
 
      .app-wizard-actions {
@@ -2510,14 +2590,23 @@
         border-radius: @panel-border-radius;
         .app-button {
            box-shadow: @shadow-none;
-           padding: 10px 22px;
-           text-transform: capitalize;
+           padding: 10px 18px;
+           //text-transform: capitalize;
            margin-right: (@padding-large-horizontal / 2);
            &:last-child {
               margin-right: 0;
            }
         }
      }
+  }
+  .app-wizard { // wizard form btn secondary
+      .app-wizard-actions {
+          .btn-secondary {
+            background: @btn-default-bg;
+            color: #61656c;
+            border: 1px solid @btn-default-border;
+        }
+      }
   }
 
   //carousel styling: removing the left and right background image
@@ -2858,6 +2947,12 @@
             nav.app-datanavigator:last-of-type {
                 right: 0;
             }
+            div.app-datanavigator {
+                margin-top: -3em;
+            }
+            div.app-datanavigator:last-of-type {
+                right: 0;
+          }
         }
     }
 
@@ -3394,7 +3489,7 @@
             color: @component-active-color;
             text-shadow: none;
             border-radius: @border-radius-base;
-            &.fc-state-hover, &:focus, &.fc-state-active {
+            &.fc-state-hover, &:focus, &.fc-state-active, &.fc-button-active {
               color: @component-active-color;
               background: transparent;
               border: 1px solid @btn-default-border;
@@ -3655,23 +3750,28 @@
 
     /***Horizontal wizard styles for responsive screens***/
     .app-wizard {
+        &.dottedstepper {
+          &.text-inline {
+              .title-wrapper {
+                  left: 15px;
+              }
+          }
+        }
         .app-wizard-steps {
            background-color: transparent;
            box-shadow: @shadow-none;
            border: 0;
            padding-top: @padding-large-horizontal;
             .app-wizard-step {
-                .step-title {
+                /* .step-title {
                    display: none;
-                }
+                } */
                 &.current, &.disabled, &.active {
                   a {
                     text-align: center;
                     padding: 0 @padding-small-horizontal;
                     background-color: transparent;
                     .app-icon {
-                      font-size: 2.5em;
-                      background-color: #f7f8fa;
                       z-index: 4;
                       padding-right: 0;
                     }
@@ -3712,9 +3812,6 @@
                    a {
                       color: @brand-primary;
                    }
-                  .step-title {
-                     display: inline-block;
-                  }
                 }
             }
         }
@@ -3807,4 +3904,11 @@
           }
       }
   }
+}
+/*horizontal sider buttons issue WMS-23749 */ 
+.app-livelist>nav.app-datanavigator{
+  width:51pt;
+}
+.app-livelist > div.app-datanavigator {
+  width: 51pt;
 }

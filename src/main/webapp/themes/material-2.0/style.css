@@ -7482,7 +7482,7 @@ button.wm-app .close {
 .wm-app .app-header .nav > li a,
 .wm-app .app-mobile-header .nav > li a {
   color: #babfc2;
-  margin: .62em 0;
+  margin: 1em 0;
 }
 .wm-app .app-header .nav > li a i,
 .wm-app .app-mobile-header .nav > li a i {
@@ -7496,38 +7496,36 @@ button.wm-app .close {
   color: #2C3049;
   background-color: transparent;
 }
-.wm-app .app-header .nav > li .profile,
-.wm-app .app-mobile-header .nav > li .profile,
-.wm-app .app-header .nav > li:last-child a,
-.wm-app .app-mobile-header .nav > li:last-child a,
 .wm-app .app-header .nav > li .app-popover-wrapper a,
 .wm-app .app-mobile-header .nav > li .app-popover-wrapper a {
   padding: 0 2em 0 1.5em;
   margin: .9em 0;
   border-radius: 0;
 }
+.wm-app .app-header .nav > li .profile,
+.wm-app .app-mobile-header .nav > li .profile,
+.wm-app .app-header .nav > li:last-child a,
+.wm-app .app-mobile-header .nav > li:last-child a {
+  border-radius: 0;
+}
 .wm-app .app-header .nav > li .profile img,
 .wm-app .app-mobile-header .nav > li .profile img,
 .wm-app .app-header .nav > li:last-child a img,
-.wm-app .app-mobile-header .nav > li:last-child a img,
-.wm-app .app-header .nav > li .app-popover-wrapper a img,
-.wm-app .app-mobile-header .nav > li .app-popover-wrapper a img {
+.wm-app .app-mobile-header .nav > li:last-child a img {
   border-radius: 50%;
   box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
 }
 .wm-app .app-header .nav > li .profile::before,
 .wm-app .app-mobile-header .nav > li .profile::before,
 .wm-app .app-header .nav > li:last-child a::before,
-.wm-app .app-mobile-header .nav > li:last-child a::before,
-.wm-app .app-header .nav > li .app-popover-wrapper a::before,
-.wm-app .app-mobile-header .nav > li .app-popover-wrapper a::before {
+.wm-app .app-mobile-header .nav > li:last-child a::before {
   content: '';
-  height: 70%;
+  height: 40%;
   width: 1px;
   background-color: #babfc2;
   position: absolute;
   left: 0;
-  margin: .5em 0;
+  margin: 0.2em 0;
 }
 .wm-app .app-header .app-nav.nav-pills li.app-nav-item a,
 .wm-app .app-mobile-header .app-nav.nav-pills li.app-nav-item a {
@@ -7537,6 +7535,10 @@ button.wm-app .close {
 .wm-app .app-mobile-header .app-grid-layout .app-grid-row .app-grid-column[name="headerleft"] img {
   height: 70px;
   padding: 10px 15px;
+}
+.wm-app .app-header .app-grid-layout .app-grid-row .app-grid-column[name="headerright"],
+.wm-app .app-mobile-header .app-grid-layout .app-grid-row .app-grid-column[name="headerright"] {
+  padding-top: 0 !important;
 }
 .wm-app .app-header .app-nav.nav-pills .app-nav-item.active .app-popover-wrapper a,
 .wm-app .app-mobile-header .app-nav.nav-pills .app-nav-item.active .app-popover-wrapper a,
@@ -9744,8 +9746,28 @@ button.wm-app .close {
 .wm-app .app-wizard .app-wizard-steps .app-wizard-step .app-icon {
   font-size: 1.6em;
 }
+.wm-app .app-wizard .app-wizard-steps.iconstepper .app-wizard-step.active .wizard-number-step {
+  background-color: #4CAF50;
+}
+.wm-app .app-wizard .app-wizard-steps.iconstepper .app-wizard-step.active .wizard-number-step .app-icon {
+  color: #fff;
+}
+.wm-app .app-wizard .app-wizard-steps.iconstepper .app-wizard-steps .app-wizard-step.current .wizard-step-number {
+  background-color: #21ADF0;
+}
+.wm-app .app-wizard .app-wizard-steps.iconstepper .app-wizard-steps .app-wizard-step.current .wizard-step-number .app-icon {
+  color: #fff;
+}
+.wm-app .app-wizard.number .app-wizard-steps .app-wizard-step a .wizard-step-number {
+  width: 25pt;
+  height: 25pt;
+  left: 53%;
+  top: -25px;
+  font-size: 1.1em;
+}
 .wm-app .app-wizard.number .app-wizard-steps,
-.wm-app .app-wizard.dottedstepper .app-wizard-steps {
+.wm-app .app-wizard.dottedstepper .app-wizard-steps,
+.wm-app .app-wizard.iconstepper .app-wizard-steps {
   box-shadow: none;
   border-radius: 0;
   border-bottom: 0;
@@ -9753,12 +9775,14 @@ button.wm-app .close {
   padding: 1em 0 0;
 }
 .wm-app .app-wizard.number .app-wizard-steps .app-wizard-step a,
-.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step a {
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step a,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step a {
   background-color: transparent;
   padding: 0 10px 0 1em;
 }
 .wm-app .app-wizard.number .app-wizard-steps .app-wizard-step a .wizard-step-number,
-.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step a .wizard-step-number {
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step a .wizard-step-number,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step a .wizard-step-number {
   -webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.08) 2px 5px #DBDBDB;
@@ -9768,38 +9792,86 @@ button.wm-app .close {
   -o-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.08) 2px 5px #DBDBDB;
 }
 .wm-app .app-wizard.number .app-wizard-steps .app-wizard-step a .title-wrapper,
-.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step a .title-wrapper {
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step a .title-wrapper,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step a .title-wrapper {
   top: -70px;
 }
 .wm-app .app-wizard.number .app-wizard-steps .app-wizard-step a .title-wrapper span:first-child,
-.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step a .title-wrapper span:first-child {
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step a .title-wrapper span:first-child,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step a .title-wrapper span:first-child {
   font-family: 'robotoLight', sans-serif;
 }
+.wm-app .app-wizard.number .app-wizard-steps .app-wizard-step.current .wizard-step-number,
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.current .wizard-step-number,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step.current .wizard-step-number {
+  border-color: #21ADF0;
+}
+.wm-app .app-wizard.number .app-wizard-steps .app-wizard-step.current .wizard-step-number .app-icon,
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.current .wizard-step-number .app-icon,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step.current .wizard-step-number .app-icon {
+  color: #21ADF0;
+}
+.wm-app .app-wizard.number .app-wizard-steps .app-wizard-step.current .wizard-step-number .dottedstepper,
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.current .wizard-step-number .dottedstepper,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step.current .wizard-step-number .dottedstepper {
+  background-color: #21ADF0;
+}
 .wm-app .app-wizard.number .app-wizard-steps .app-wizard-step.current a,
-.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.current a {
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.current a,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step.current a {
   color: #21ADF0;
   background-color: transparent;
 }
 .wm-app .app-wizard.number .app-wizard-steps .app-wizard-step.current a .count,
-.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.current a .count {
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.current a .count,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step.current a .count {
   color: #21ADF0;
 }
 .wm-app .app-wizard.number .app-wizard-steps .app-wizard-step.active a,
-.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.active a {
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.active a,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step.active a {
   color: #4CAF50;
   background-color: transparent;
 }
 .wm-app .app-wizard.number .app-wizard-steps .app-wizard-step.active a .count,
-.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.active a .count {
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.active a .count,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step.active a .count {
+  color: #4CAF50;
+}
+.wm-app .app-wizard.number .app-wizard-steps .app-wizard-step.active .wizard-step-number,
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.active .wizard-step-number,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step.active .wizard-step-number {
+  border-color: #4CAF50;
+}
+.wm-app .app-wizard.number .app-wizard-steps .app-wizard-step.active .wizard-step-number .app-icon,
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.active .wizard-step-number .app-icon,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step.active .wizard-step-number .app-icon {
   color: #4CAF50;
 }
 .wm-app .app-wizard.number .app-wizard-steps .app-wizard-step.disabled a,
-.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.disabled a {
+.wm-app .app-wizard.dottedstepper .app-wizard-steps .app-wizard-step.disabled a,
+.wm-app .app-wizard.iconstepper .app-wizard-steps .app-wizard-step.disabled a {
   background-color: transparent;
 }
+.wm-app .app-wizard.number.vertical .app-wizard-steps .app-wizard-step .wizard-step-number,
+.wm-app .app-wizard.dottedstepper.vertical .app-wizard-steps .app-wizard-step .wizard-step-number,
+.wm-app .app-wizard.iconstepper.vertical .app-wizard-steps .app-wizard-step .wizard-step-number {
+  left: -25px;
+  top: 8px;
+}
 .wm-app .app-wizard.number.vertical .app-wizard-steps .app-wizard-step a,
-.wm-app .app-wizard.dottedstepper.vertical .app-wizard-steps .app-wizard-step a {
+.wm-app .app-wizard.dottedstepper.vertical .app-wizard-steps .app-wizard-step a,
+.wm-app .app-wizard.iconstepper.vertical .app-wizard-steps .app-wizard-step a {
   padding: 0 10px 0 2em;
+}
+.wm-app .app-wizard.number.vertical.text-inline .app-wizard-steps .app-wizard-step .wizard-step-number,
+.wm-app .app-wizard.dottedstepper.vertical.text-inline .app-wizard-steps .app-wizard-step .wizard-step-number,
+.wm-app .app-wizard.iconstepper.vertical.text-inline .app-wizard-steps .app-wizard-step .wizard-step-number {
+  left: -22px;
+  top: 22px;
+}
+.wm-app .app-wizard.dottedstepper.text-inline .title-wrapper {
+  left: 15px;
 }
 .wm-app .app-wizard .app-wizard-actions {
   -webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.08);
@@ -9813,12 +9885,16 @@ button.wm-app .close {
 }
 .wm-app .app-wizard .app-wizard-actions .app-button {
   box-shadow: none;
-  padding: 10px 22px;
-  text-transform: capitalize;
+  padding: 10px 18px;
   margin-right: 1em;
 }
 .wm-app .app-wizard .app-wizard-actions .app-button:last-child {
   margin-right: 0;
+}
+.wm-app .app-wizard .app-wizard-actions .btn-secondary {
+  background: #fff;
+  color: #61656c;
+  border: 1px solid #ECEFF1;
 }
 .wm-app .carousel-control.left,
 .wm-app .carousel-control.right {
@@ -10150,6 +10226,14 @@ button.wm-app .close {
 }
 .wm-app .app-list.list-card.Inline nav.app-datanavigator:last-of-type,
 .wm-app .app-livelist.list-card.Inline nav.app-datanavigator:last-of-type {
+  right: 0;
+}
+.wm-app .app-list.list-card.Inline div.app-datanavigator,
+.wm-app .app-livelist.list-card.Inline div.app-datanavigator {
+  margin-top: -3em;
+}
+.wm-app .app-list.list-card.Inline div.app-datanavigator:last-of-type,
+.wm-app .app-livelist.list-card.Inline div.app-datanavigator:last-of-type {
   right: 0;
 }
 .wm-app .app-list.email-list .media-body .app-grid-row,
@@ -10855,7 +10939,8 @@ button.wm-app .close {
 }
 .wm-app .app-calendar .fc .fc-toolbar .fc-button.fc-state-hover,
 .wm-app .app-calendar .fc .fc-toolbar .fc-button:focus,
-.wm-app .app-calendar .fc .fc-toolbar .fc-button.fc-state-active {
+.wm-app .app-calendar .fc .fc-toolbar .fc-button.fc-state-active,
+.wm-app .app-calendar .fc .fc-toolbar .fc-button.fc-button-active {
   color: #fff;
   background: transparent;
   border: 1px solid #ECEFF1;
@@ -11071,14 +11156,19 @@ button.wm-app .close {
   .wm-app .btn-group .btn .app-icon {
     padding-top: .2em;
   }
+  .wm-app .app-wizard.dottedstepper.text-inline .title-wrapper {
+    left: 15px;
+  }
   .wm-app .app-wizard .app-wizard-steps {
     background-color: transparent;
     box-shadow: none;
     border: 0;
     padding-top: 2em;
   }
-  .wm-app .app-wizard .app-wizard-steps .app-wizard-step .step-title {
-    display: none;
+  .wm-app .app-wizard .app-wizard-steps .app-wizard-step {
+    /* .step-title {
+                   display: none;
+                } */
   }
   .wm-app .app-wizard .app-wizard-steps .app-wizard-step.current a,
   .wm-app .app-wizard .app-wizard-steps .app-wizard-step.disabled a,
@@ -11090,8 +11180,6 @@ button.wm-app .close {
   .wm-app .app-wizard .app-wizard-steps .app-wizard-step.current a .app-icon,
   .wm-app .app-wizard .app-wizard-steps .app-wizard-step.disabled a .app-icon,
   .wm-app .app-wizard .app-wizard-steps .app-wizard-step.active a .app-icon {
-    font-size: 2.5em;
-    background-color: #f7f8fa;
     z-index: 4;
     padding-right: 0;
   }
@@ -11125,9 +11213,6 @@ button.wm-app .close {
   }
   .wm-app .app-wizard .app-wizard-steps .app-wizard-step.current a {
     color: #2C3049;
-  }
-  .wm-app .app-wizard .app-wizard-steps .app-wizard-step.current .step-title {
-    display: inline-block;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
@@ -11281,4 +11366,11 @@ button.wm-app .close {
     -webkit-column-width: calc(50%);
     max-width: 100%;
   }
+}
+/*horizontal sider buttons issue WMS-23749 */
+.app-livelist > nav.app-datanavigator {
+  width: 51pt;
+}
+.app-livelist > div.app-datanavigator {
+  width: 51pt;
 }
