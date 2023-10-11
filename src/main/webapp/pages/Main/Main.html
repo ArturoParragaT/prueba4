@@ -1,0 +1,34 @@
+<wm-page id="page" name="mainpage" pagetitle="Main">
+    <wm-header content="header" name="header" height="auto"></wm-header>
+    <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
+    <wm-content name="content">
+        <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
+        <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1" class="whiteback">
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn1" horizontalalign="center">
+                        <wm-button class="btn-default" caption="Primero" type="button" margin="30px 0.5px unset 0.5px" name="primerTour" on-click="primerTourClick($event, widget)"></wm-button>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn2" horizontalalign="center">
+                        <wm-button class="btn-default" caption="HTML" type="button" margin="30px 0.5px unset 0.5px" on-click="htmlTourClick($event, widget)" name="htmlTour"></wm-button>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="4" name="gridcolumn5" horizontalalign="center">
+                        <wm-button class="btn-default" caption="DontShow" type="button" margin="30px 0.5px unset 0.5px" on-click="dontShowClick($event, widget)" name="dontShow"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-table id="tablaPrincipal" editmode="inline" statehandler="URL" name="CustomersTable1" title="Customers List" dataset="bind:Variables.SalesdbCustomersData.dataSet" navigation="Classic" gridclass="">
+                <wm-table-column binding="id" caption="Id" generator="identity" pcdisplay="true" mobiledisplay="true" tabletdisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column>
+                <wm-table-column binding="name" caption="Name" generator="assigned" pcdisplay="true" mobiledisplay="true" tabletdisplay="true" type="string" required="true"></wm-table-column>
+                <wm-table-column binding="states.id" caption="States Id" generator="identity" pcdisplay="true" mobiledisplay="true" tabletdisplay="true" type="integer" primary-key="true" related-entity-name="States"></wm-table-column>
+                <wm-table-column binding="states.name" caption="States Name" generator="assigned" pcdisplay="true" mobiledisplay="true" tabletdisplay="true" type="string" related-entity-name="States" readonly="true"></wm-table-column>
+                <wm-table-column binding="states.abbrev" caption="States Abbrev" generator="assigned" pcdisplay="true" mobiledisplay="true" tabletdisplay="true" type="string" related-entity-name="States" readonly="true"></wm-table-column>
+                <wm-table-action widget-type="button" key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
+                <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow($event)"></wm-table-row-action>
+                <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow($event)"></wm-table-row-action>
+            </wm-table>
+        </wm-page-content>
+        <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
+    </wm-content>
+    <wm-footer name="footer" content="footer"></wm-footer>
+</wm-page>

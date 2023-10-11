@@ -1,0 +1,6 @@
+{
+  "id" : "salesdb",
+  "type" : "DataService",
+  "packageNames" : [ "es.innoqa.apptour.salesdb" ],
+  "title" : "salesdb"
+}
