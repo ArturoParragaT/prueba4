@@ -112,7 +112,4 @@ public class Tasks implements Serializable {
         return Objects.hash(getId());
     }
     
-    public int getNumber () {
-        return 3;
-    }
 }
